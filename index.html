@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des étudiants</title>
+
+    <!-- Fichier CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fichier JavaScript -->
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <div>
+                    <h1>StudentManager</h1>
+                    <p>Gestion des étudiants</p>
+                </div>
+            </div>
+
+            <span class="header-badge">Espace Administration</span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="welcome-label">TABLEAU DE BORD</p>
+                <h2>Bienvenue sur votre espace</h2>
+                <p>Consultez et gérez facilement les informations des étudiants.</p>
+            </div>
+        </section>
+
+        <section class="statistics">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">👨‍🎓</div>
+                <div>
+                    <p>Total des étudiants</p>
+                    <h2 id="totalStudents">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon purple">📋</div>
+                <div>
+                    <p>Résultats affichés</p>
+                    <h2 id="visibleStudents">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="content-card">
+
+            <div class="section-title">
+                <div>
+                    <h2>Liste des étudiants</h2>
+                    <p>Recherchez et filtrez les étudiants.</p>
+                </div>
+
+                <span class="list-icon">📚</span>
+            </div>
+
+            <div class="filters">
+
+                <div class="form-group">
+                    <label for="searchInput">Rechercher un étudiant</label>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Nom, prénom ou matricule..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="filterFiliere">Filtrer par filière</label>
+
+                    <select id="filterFiliere">
+                        <option value="all">Toutes les filières</option>
+                        <option value="Génie Informatique">Génie Informatique</option>
+                        <option value="Cybersecurity">Cybersecurity</option>
+                        <option value="Développement Informatique">
+                            Développement Informatique
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Matricule</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Âge</th>
+                            <th>Filière</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentsTableBody">
+                      
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- MESSAGE AUCUN RESULTAT -->
+            <p id="emptyMessage" class="empty-message" hidden>
+                Aucun étudiant trouvé.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>StudentManager © 2026 - TP5 Git et GitHub</p>
+    </footer>
+
+</body>
+</html>
