@@ -101,9 +101,6 @@ function normalizeText(text) {
 
 }
 
-
-
-
 function filterStudents() {
 
    
@@ -251,7 +248,17 @@ filterFiliere.addEventListener("change", function() {
 
 });
 
+function updateStats(list) {
+    // Âge moyen
+    const avg = list.length
+        ? Math.round(list.reduce((sum, s) => sum + s.age, 0) / list.length)
+        : 0;
+    document.getElementById("averageAge").textContent = avg + " ans";
 
+    // Nombre de filières distinctes
+    const filieres = new Set(list.map(s => s.filiere));
+    document.getElementById("activeFilieres").textContent = filieres.size;
+}
 
-
+updateStats(students);
 renderStudents();
